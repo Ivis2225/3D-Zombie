@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bamksvvbdj5kn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5vdb1"]
+radius = 0.5126953
+height = 2.009575
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5vdb1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5vdb1"]
+size = Vector3(0.1, 0.1, 1)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 6.981317e-05, 0, 1, 0, -6.981317e-05, 0, 1, 0.004779637, 0.99649704, 0.002019763)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4755638e-05, 0.0045723915, -0.002240184)
+shape = SubResource("CapsuleShape3D_5vdb1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3457611e-06, 0.54661, -0.019277364)
+fov = 71.42308
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0002573924, 0.0020213127, -0.0049276175)
+mesh = SubResource("CapsuleMesh_5vdb1")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0009152e-05, 0.56205773, -0.5730892)
+mesh = SubResource("BoxMesh_5vdb1")
